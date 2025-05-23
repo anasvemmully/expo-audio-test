@@ -16,7 +16,9 @@
       [
         "expo-asset",
         {
-          "assets": ["./assets/sound"]
+          "assets": [
+            "./assets/sound"
+          ]
         }
       ]
     ],
