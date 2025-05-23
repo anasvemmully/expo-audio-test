@@ -6,10 +6,10 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 
 export default function Details() {
-  const sound1 = useAudioPlayer(require("~/assets/sound/sound1.mp3"))
-  const sound2 = useAudioPlayer(require("~/assets/sound/sound2.mp3"))
-  const sound3 = useAudioPlayer(require("~/assets/sound/sound3.mp3"))
-  const sound4 = useAudioPlayer(require("~/assets/sound/sound4.mp3"))
+  const sound1 = useAudioPlayer({ uri: "sound1" })
+  const sound2 = useAudioPlayer({ uri: "sound2" })
+  const sound3 = useAudioPlayer({ uri: "sound3" })
+  const sound4 = useAudioPlayer({ uri: "sound4" })
 
   useFocusEffect(
     React.useCallback(() => {
@@ -21,46 +21,26 @@ export default function Details() {
   )
 
   const playSound1 = async () => {
-    const { playing, currentStatus } = sound1;
-    const { playbackState } = currentStatus;
-
-    if (playing || playbackState === "ended") {
-      sound1.seekTo(0);
-    }
-
+    console.log('sound1 >> ', sound1)
+    await sound1.seekTo(0);
     sound1.play();
   }
 
   const playSound2 = async () => {
-    const { playing, currentStatus } = sound2;
-    const { playbackState } = currentStatus;
-
-    if (playing || playbackState === "ended") {
-      sound2.seekTo(0);
-    }
-
+    console.log('sound2 >> ', sound2)
+    await sound2.seekTo(0);
     sound2.play();
   }
 
   const playSound3 = async () => {
-    const { playing, currentStatus } = sound3;
-    const { playbackState } = currentStatus;
-
-    if (playing || playbackState === "ended") {
-      sound3.seekTo(0);
-    }
-
+    console.log('sound3 >> ', sound3)
+    await sound3.seekTo(0);
     sound3.play();
   }
 
   const playSound4 = async () => {
-    const { playing, currentStatus } = sound4;
-    const { playbackState } = currentStatus;
-
-    if (playing || playbackState === "ended") {
-      sound4.seekTo(0);
-    }
-
+    console.log('sound4 >> ', sound4)
+    await sound4.seekTo(0);
     sound4.play();
   }
 
